@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Nidhi's Dashboard</title>
+</head>
+<body class="bg-[linear-gradient(90deg,#FFC0CB,#FFD1DC,#E6C7FF)] min-h-screen flex font-sans">
+
+    <aside class="w-72 bg-white/20 backdrop-blur-xl border-r border-white/40 flex flex-col p-6 hidden lg:flex h-screen sticky top-0">
+        <div class="flex items-center gap-3 mb-10 px-2">
+            <div class="bg-white p-2 rounded-2xl shadow-sm rotate-[-5deg]">
+                <img src="img/Adobe Express - file.png" alt="cherry" class="w-8">
+            </div>
+            <h2 class="text-2xl font-black text-pink-800 tracking-tight">Nidhi</h2>
+        </div>
+        
+        <div class="flex flex-col gap-6">
+            <div class="bg-white/40 p-5 rounded-[2rem] border border-white/60 shadow-sm">
+                <p class="text-xs font-bold text-pink-900 uppercase tracking-widest mb-3">Current Mood</p>
+                <div class="flex justify-between text-2xl">
+                    <span class="cursor-pointer transition">🎀</span>
+                    <span class=" grayscale hover:grayscale-0 cursor-default">✨</span>
+                    <span class="grayscale hover:grayscale-0 cursor-pointer transition">🌸</span>
+                    <span class="grayscale hover:grayscale-0 cursor-pointer transition">🍵</span>
+                </div>
+            </div>
+
+            <div class="bg-pink-700 p-5 rounded-[2rem] text-white shadow-lg rotate-[2deg] mt-4">
+                <p class="text-sm font-medium opacity-80">Today's Date</p>
+                <p class="text-3xl font-black" id="date"></p>
+                <div class="mt-3 pt-3 border-t border-pink-400 text-xs italic">
+                    "Everything is coming up cherries!"
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 p-6 md:p-12 overflow-y-auto">
+        
+        <header class="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
+            <div>
+                <h1 class="text-5xl font-black text-pink-800 drop-shadow-sm">Welcome Back!</h1>
+                <p class="text-pink-900 font-medium opacity-70 mt-2">Here is what's happening with your projects today.</p>
+            </div>
+            <div class="flex gap-3">
+                 <div class="bg-white/50 backdrop-blur-md px-5 py-3 rounded-full border-2 border-white flex items-center gap-2">
+                    <span class="opacity-50">🔍</span>
+                    <input type="text" placeholder="Search tasks..." class="bg-transparent outline-none text-pink-700 placeholder-pink-300 w-32">
+                 </div>
+            </div>
+        </header>
+
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+            
+            <a href="task1/index.html" class="relative group flex flex-col justify-end min-h-[160px] p-6 text-pink-700 rounded-[2.5rem] bg-white border-2 border-white/50 font-bold hover:bg-pink-50 hover:scale-[1.02] transition-all duration-300 shadow-xl shadow-pink-200/50">
+                <span class="text-xs uppercase tracking-tighter opacity-50 mb-1">HTML CSS</span>
+                <span class="text-3xl font-black">FIGMA</span>
+                <img src="img/Adobe Express - file.png" alt="cherry" class="absolute w-14 top-[-15px] right-[-5px] transition-transform group-hover:rotate-12 group-hover:scale-110">
+            </a>
+
+            <a href="task1/Tailwind_index.html" class="relative group flex flex-col justify-end min-h-[160px] p-6 text-pink-700 rounded-[2.5rem] bg-white border-2 border-white/50 font-bold hover:bg-pink-50 hover:scale-[1.02] transition-all duration-300 shadow-xl shadow-pink-200/50">
+                <span class="text-xs uppercase tracking-tighter opacity-50 mb-1">TAILWIND</span>
+                <span class="text-3xl font-black">FIGMA</span>
+                <img src="img/Adobe Express - file.png" alt="cherry" class="absolute w-14 top-[-15px] right-[-5px] transition-transform group-hover:rotate-12 group-hover:scale-110">
+            </a>
+
+            <a href="comingsoon.html" class="relative group flex flex-col justify-end min-h-[160px] p-6 text-pink-700 rounded-[2.5rem] bg-white border-2 border-white/50 font-bold hover:bg-pink-50 hover:scale-[1.02] transition-all duration-300 shadow-xl shadow-pink-200/50">
+                <span class="text-xs uppercase tracking-tighter opacity-50 mb-1">Lorem ipsum dolor sit amet.</span>
+                <span class="text-3xl font-black">TASK 3</span>
+                <img src="img/Adobe Express - file.png" alt="cherry" class="absolute w-14 top-[-15px] right-[-5px] transition-transform group-hover:rotate-12 group-hover:scale-110">
+            </a>
+
+            <a href="comingsoon.html" class="relative group flex flex-col justify-end min-h-[160px] p-6 text-pink-700 rounded-[2.5rem] bg-white border-2 border-white/50 font-bold hover:bg-pink-50 hover:scale-[1.02] transition-all duration-300 shadow-xl shadow-pink-200/50">
+                <span class="text-xs uppercase tracking-tighter opacity-50 mb-1">Lorem, ipsum dolor.</span>
+                <span class="text-3xl font-black">TASK 4</span>
+                <img src="img/Adobe Express - file.png" alt="cherry" class="absolute w-14 top-[-15px] right-[-5px] transition-transform group-hover:rotate-12 group-hover:scale-110">
+            </a>
+
+             <a href="comingsoon.html" class="relative group flex flex-col justify-end min-h-[160px] p-6 text-pink-700 rounded-[2.5rem] bg-white border-2 border-white/50 font-bold hover:bg-pink-50 hover:scale-[1.02] transition-all duration-300 shadow-xl shadow-pink-200/50">
+                <span class="text-xs uppercase tracking-tighter opacity-50 mb-1">Lorem, ipsum dolor.</span>
+                <span class="text-3xl font-black">TASK 5</span>
+                <img src="img/Adobe Express - file.png" alt="cherry" class="absolute w-14 top-[-15px] right-[-5px] transition-transform group-hover:rotate-12 group-hover:scale-110">
+            </a>
+
+        </div>
+    </main>
+
+    <script>
+        let dateElement = document.getElementById('date');
+        let today = new Date();
+        dateElement.innerText= today.toLocaleDateString('en-US', {  month: 'long',  day: 'numeric'});
+    </script>
+
+</body>
+</html>

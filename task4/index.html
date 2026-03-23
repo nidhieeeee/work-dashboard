@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Bridge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Space Grotesk', sans-serif;
+            background-image: radial-gradient(circle at 2px 2px, #1e2124 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .glass-card {
+            background: rgba(28, 31, 35, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <main class="glass-card p-10 rounded-[2rem] shadow-2xl max-w-4xl w-full">
+        <header class="mb-10 flex justify-between items-end">
+            <div>
+                <span class="text-[#c5a367] text-xs font-bold uppercase tracking-[0.3em]">Currency converter</span>
+                <h1 class="text-3xl font-light text-slate-100 mt-1">Global <span class="font-bold text-white">Value</span></h1>
+            </div>
+            <div id="result" class="text-right text-[#c5a367] font-medium text-sm tracking-wide">
+               
+            </div>
+        </header>
+
+        <div class="flex flex-col md:flex-row items-center gap-4">
+            
+            <div class="flex-1 w-full group">
+                <div class="bg-[#24272c] border-2 border-transparent group-focus-within:border-[#c5a367]/30 transition-all p-6 rounded-2xl">
+                    <label class="block text-[10px] text-slate-500 font-bold uppercase mb-4 tracking-widest">Source Asset</label>
+                    <div class="flex items-center gap-4">
+                        <select id="fromCurrency" class="bg-[#1c1f23] text-white border-none outline-none p-3 rounded-xl font-bold text-sm cursor-pointer hover:bg-[#2b2f35] transition-colors">
+                               <option value="usd">USA ($)</option>
+                <option value="eur">Europe (€)</option>
+                <option value="inr">India (₹)</option>
+                <option value="gbp">United Kingdom (£)</option>
+                <option value="jpy">Japan (¥)</option>
+                <option value="aud">Australia ($)</option>
+                <option value="cad">Canada ($)</option>
+                <option value="cny">China (¥)</option>
+                <option value="chf">Switzerland (CHF)</option>
+                <option value="rub">Russia (₽)</option>
+                <option value="sgd">Singapore ($)</option>
+                <option value="nzd">New Zealand ($)</option>
+                <option value="zar">South Africa (R)</option>
+                <option value="aed">UAE (د.إ)</option>
+                <option value="sar">Saudi Arabia (﷼)</option>
+                <option value="krw">South Korea (₩)</option>
+                <option value="thb">Thailand (฿)</option>
+                <option value="myr">Malaysia (RM)</option>
+                <option value="idr">Indonesia (Rp)</option>
+                <option value="php">Philippines (₱)</option>
+                <option value="brl">Brazil (R$)</option>
+                <option value="mxn">Mexico ($)</option>
+                <option value="sek">Sweden (kr)</option>
+                <option value="nok">Norway (kr)</option>
+                <option value="dkk">Denmark (kr)</option>
+                <option value="pln">Poland (zł)</option>
+                <option value="try">Turkey (₺)</option>
+                <option value="hkd">Hong Kong ($)</option>
+                <option value="twd">Taiwan (NT$)</option>
+                <option value="vnd">Vietnam (₫)</option>
+                <option value="egp">Egypt (£)</option>
+                <option value="pkr">Pakistan (₨)</option>
+                <option value="bdt">Bangladesh (৳)</option>
+                <option value="lkr">Sri Lanka (₨)</option>
+                        </select>
+                        <input type="number" id="input-amount" placeholder="0.00" 
+                            class="bg-transparent border-none outline-none text-3xl font-light text-white w-full placeholder:text-slate-700">
+                    </div>
+                </div>
+            </div>
+
+            <div class="z-10 -my-4 md:my-0 md:-mx-6">
+                <div class="bg-[#c5a367] text-[#0f1113] p-4 rounded-full shadow-[0_0_30px_rgba(197,163,103,0.3)] transform rotate-90 md:rotate-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="flex-1 w-full group">
+                <div class="bg-[#24272c] border-2 border-transparent group-focus-within:border-[#c5a367]/30 transition-all p-6 rounded-2xl">
+                    <label class="block text-[10px] text-slate-500 font-bold uppercase mb-4 tracking-widest">Target Asset</label>
+                    <div class="flex items-center gap-4">
+                        <select id="toCurrency" class="bg-[#1c1f23] text-white border-none outline-none p-3 rounded-xl font-bold text-sm cursor-pointer hover:bg-[#2b2f35] transition-colors">
+                               <option value="usd">USA ($)</option>
+                <option value="eur">Europe (€)</option>
+                <option value="inr">India (₹)</option>
+                <option value="gbp">United Kingdom (£)</option>
+                <option value="jpy">Japan (¥)</option>
+                <option value="aud">Australia ($)</option>
+                <option value="cad">Canada ($)</option>
+                <option value="cny">China (¥)</option>
+                <option value="chf">Switzerland (CHF)</option>
+                <option value="rub">Russia (₽)</option>
+                <option value="sgd">Singapore ($)</option>
+                <option value="nzd">New Zealand ($)</option>
+                <option value="zar">South Africa (R)</option>
+                <option value="aed">UAE (د.إ)</option>
+                <option value="sar">Saudi Arabia (﷼)</option>
+                <option value="krw">South Korea (₩)</option>
+                <option value="thb">Thailand (฿)</option>
+                <option value="myr">Malaysia (RM)</option>
+                <option value="idr">Indonesia (Rp)</option>
+                <option value="php">Philippines (₱)</option>
+                <option value="brl">Brazil (R$)</option>
+                <option value="mxn">Mexico ($)</option>
+                <option value="sek">Sweden (kr)</option>
+                <option value="nok">Norway (kr)</option>
+                <option value="dkk">Denmark (kr)</option>
+                <option value="pln">Poland (zł)</option>
+                <option value="try">Turkey (₺)</option>
+                <option value="hkd">Hong Kong ($)</option>
+                <option value="twd">Taiwan (NT$)</option>
+                <option value="vnd">Vietnam (₫)</option>
+                <option value="egp">Egypt (£)</option>
+                <option value="pkr">Pakistan (₨)</option>
+                <option value="bdt">Bangladesh (৳)</option>
+                <option value="lkr">Sri Lanka (₨)</option>
+                        </select>
+                        <input type="number" id="result-amount" placeholder="----" readonly 
+                            class="bg-transparent border-none outline-none text-3xl font-light text-[#c5a367] w-full placeholder:text-slate-700 cursor-default">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="mt-10 flex items-center justify-center gap-6">
+            <button id="convertBtn" class="w-full md:w-auto px-12 py-4 bg-[#c5a367] hover:bg-[#d9b67a] text-[#0f1113] font-bold rounded-xl transition-all active:scale-95 shadow-lg">
+                Execute Conversion
+            </button>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

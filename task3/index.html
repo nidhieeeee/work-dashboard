@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToodleDo</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100">
+
+  <nav class="flex justify-between px-10 py-5 bg-white shadow items-center">
+    <h1 class="text-3xl font-bold text-blue-600">ToodleDo</h1>
+    <div class="gap-6 text-lg hidden md:flex">
+      <button onclick="filterTasks('all')">All</button>
+      <button onclick="filterTasks('completed')">Completed</button>
+      <button onclick="filterTasks('pending')">Pending</button>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto mt-10">
+
+    <div class="flex gap-3">
+      <input id="taskInput" type="text" placeholder="Enter a task..."
+        class="flex-1 border rounded px-4 py-2">
+      <button onclick="addTask()"
+        class="bg-blue-500 text-white px-6 rounded">Add</button>
+    </div>
+
+    <div id="taskList" class="mt-6 space-y-3"></div>
+
+  </main>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -80,7 +80,7 @@
         const API_URL = "https://69c228767518bf8facbd6a17.mockapi.io/crud/form/user";
         let allUsers = [];
         let currentPage = 1;
-        const rowsPerPage = 5;
+        const rowsPerPage = 6;
 
         // Elements
         const listView = document.getElementById("listView");
@@ -155,8 +155,8 @@
                     <td class="p-4 truncate max-w-[120px] text-slate-500">${user.bio || ''}</td>
                     <td class="p-4 text-sm">${user.city}, ${user.contry}</td>
                     <td class="p-4">
-                        <button onclick="editUser('${user.id}')" class="text-blue-500 hover:underline mr-3 font-semibold">Edit</button>
-                        <button onclick="deleteUser('${user.id}')" class="text-red-500 hover:underline font-semibold">Delete</button>
+                        <button onclick="editUser('${user.id}')" class="text-black hover:underline mr-3 font-semibold">Edit</button>
+                        <button onclick="deleteUser('${user.id}')" class="text-black hover:underline font-semibold">Delete</button>
                     </td>
                 </tr>
             `).join("");

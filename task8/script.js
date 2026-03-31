@@ -1,5 +1,4 @@
 
-        
         const products = [
             { id: 1, name: "MacBook Pro", price: 1999, category: "Electronics" },
             { id: 2, name: "Ergonomic Chair", price: 250, category: "Furniture" },

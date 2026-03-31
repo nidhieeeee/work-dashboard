@@ -4,42 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Calculator</title>
+      <style>
+        body { 
+            font-family: 'Space Grotesk', sans-serif;
+            background-image: radial-gradient(circle at 2px 2px, #1e2124 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-50 flex items-center justify-center min-h-screen font-sans antialiased">
+<body class="flex items-center justify-center min-h-screen font-sans antialiased">
 
-    <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200 w-full max-w-[500px]">
+    <div class="bg-zinc-900/50 p-8 rounded-2xl shadow-xl border border-slate-200 w-full max-w-[500px]">
         
-        <h1 class="text-slate-400 text-xs font-semibold tracking-widest uppercase mb-4">Calculator</h1>
+        <h1 class="text-slate-900 font-bold text-xs tracking-widest uppercase mb-4">Calculator</h1>
 
         <div id="output" class="w-full h-16 bg-slate-100 rounded-lg flex items-center justify-end px-4 text-3xl font-semibold text-slate-800 mb-6 border-b-2 border-slate-200 overflow-auto">
             0
         </div>
 
         <div class="grid grid-cols-4 gap-3">
-            <button id="clear" class="col-span-2 bg-rose-50 hover:bg-rose-100 text-rose-600 p-4 rounded-lg transition-colors font-bold text-sm">AC</button>
+            <button id="clear" class="col-span-2 bg-slate-50 hover:bg-slate-200 text-gray-700 p-4 rounded-lg transition-colors font-bold text-sm">AC</button>
             <button class="op bg-slate-100 hover:bg-slate-200 text-slate-700 p-4 rounded-lg transition-colors font-bold" data-val="%">%</button>
-            <button class="op bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-lg transition-colors font-bold" data-val="/">/</button>
+            <button class="op bg-black hover:bg-slate-900 text-white p-4 rounded-lg transition-colors font-bold" data-val="/">/</button>
 
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">7</button>
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">8</button>
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">9</button>
-            <button class="op bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-lg transition-colors font-bold" data-val="*">*</button>
+            <button class="op bg-black hover:bg-slate-900 text-white p-4 rounded-lg transition-colors font-bold" data-val="*">*</button>
 
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">4</button>
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">5</button>
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">6</button>
-            <button class="op bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-lg transition-colors font-bold" data-val="-">-</button>
+            <button class="op bg-black hover:bg-slate-900 text-white p-4 rounded-lg transition-colors font-bold" data-val="-">-</button>
 
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">1</button>
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">2</button>
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">3</button>
-            <button class="op bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-lg transition-colors font-bold" data-val="+">+</button>
+            <button class="op bg-black hover:bg-slate-900 text-white p-4 rounded-lg transition-colors font-bold" data-val="+">+</button>
 
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">0</button>
-            <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium" id="delete">DEL</button>
             <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium">.</button>
-            <button id="btn" class="bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-lg transition-colors font-bold shadow-md">=</button>
+            <button class="num bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 p-4 rounded-lg transition-colors shadow-sm font-medium" id="delete">DEL</button>
+            <button id="btn" class="bg-black hover:bg-slate-900 text-white p-4 rounded-lg transition-colors font-bold shadow-md">=</button>
         </div>
     </div>
 

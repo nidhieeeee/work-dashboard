@@ -64,13 +64,13 @@ const displayTasks = () => {
     div.innerHTML = `
       <div class="flex items-center gap-3">
         <input type="checkbox" ${task.completed ? 'checked' : ''} onclick="toggleTask(${index})">
-        <p class="${task.completed ? 'line-through text-gray-400' : ''}">
+        <p class="${task.completed ? 'line-through text-gray-400' : ''} font-bold">
           ${task.text.toUpperCase()}
         </p>
       </div>
       <div class="flex gap-2">
-        <button onclick="editTask(${index})" class="bg-green-500 text-white px-3 py-1 rounded">Edit</button>
-        <button onclick="deleteTask(${index})" class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
+        <button onclick="editTask(${index})" class="bg-black text-white px-5 rounded-lg hover:bg-slate-900 cursor-pointer hover:scale-110">Edit</button>
+        <button onclick="deleteTask(${index})" class="bg-black text-white px-5 py-2 rounded-lg hover:bg-slate-900 cursor-pointer hover:scale-110">Delete</button>
       </div>
     `;
 
